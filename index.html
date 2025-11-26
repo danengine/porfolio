@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Danilo Eslawan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,16 +48,18 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div class="projects-list">
-                    <a href="https://oop-dev.vercel.app" target="_blank" div class="project-item">
+                    <div class="project-item">
                         <img src="images/kelsey.png" alt="Kelsey's Homestay" class="project-image">
                         <h3>Kelsey's Homestay</h3>
                         <p>Kelsey’s Homestay is a web platform where agents can list and book units. Agents can add new property listings, while administrators handle approvals, manage bookings, and oversee payments and overall operations.                        </p>
-                    </a>
-                    <a href="https://store.steampowered.com/app/2265960/Stick_Bros" target="_blank" class="project-item">
+                        <a href="https://oop-dev.vercel.app" target="_blank" class="project-link">Visit Project</a>
+                    </div>
+                    <div class="project-item">
                         <img src="images/stickbros.png" alt="Stick Bros" class="project-image">
                         <h3>Stick Bros</h3>
                         <p>An online multiplayer game I developed and published on App Store, Play Store, Steam, and WebGL. The game features online multiplayer functionality and uses a database for game data management.</p>
-                    </a>
+                        <a href="https://store.steampowered.com/app/2265960/Stick_Bros" target="_blank" class="project-link">View on Steam</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -78,6 +80,13 @@
             </div>
         </section>
     </main>
+
+    <div id="image-lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+            <button class="lightbox-close" aria-label="Close image">&times;</button>
+            <img src="" alt="Expanded view" id="lightbox-image">
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
