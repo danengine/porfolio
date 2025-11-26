@@ -13,14 +13,6 @@ This is a simple, clean portfolio website that showcases personal information, a
 - `script.js` - Theme toggle functionality
 - `profile.jpg` - Profile picture
 
-## Features
-
-- Profile section with name, title, and social media links
-- About Me section
-- Achievements/Certifications section
-- Dark/Light theme toggle
-- Responsive design
-
 ## Technologies
 
 - HTML5
