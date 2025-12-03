@@ -157,67 +157,145 @@ section h2 {
     padding: 2rem 0;
 }
 
+.projects-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.projects-guide {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.6;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
 .projects-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
 .project-item {
-    background-color: var(--badge-bg);
-    border: 1px solid var(--badge-border);
-    border-radius: 8px;
-    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 12px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    overflow: hidden;
 }
 
 .project-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
 .project-image {
     width: 100%;
-    height: 160px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
     display: block;
-    border: 1px solid var(--badge-border);
+    border: none;
     cursor: zoom-in;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.project-item:hover .project-image {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .project-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .project-item p {
     color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
     flex-grow: 1;
+    margin-bottom: 1.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-link {
-    margin-top: 1rem;
+    margin-top: auto;
     align-self: flex-start;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.75rem;
     background-color: var(--text-primary);
-    color: #fff;
-    border-radius: 6px;
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 10px;
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+    left: 100%;
 }
 
 .project-link:hover {
-    background-color: var(--text-secondary);
-    transform: translateY(-2px);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-link::after {
+    content: '→';
+    font-size: 1.1em;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.project-link:hover::after {
+    transform: translateX(4px);
+}
+
+[data-theme="dark"] .project-link {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .project-link:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .achievements {
